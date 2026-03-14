@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden Tracker — Bella Vista, AR</title>
+  <meta name="description" content="Indoor seed starting and DWC hydroponic plant tracker. 22 plants including DWC peppers, tomatoes, lettuce, herbs, bonsai, and rare Capsicum seeds.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- HEADER -->
+  <div id="header">
+    <div id="header-left">
+      <h1>🌱 Garden Tracker</h1>
+      <p>Bella Vista, AR · Zone 6b · Last frost ~Apr 15 · Safe planting ~Apr 27</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span id="save-msg" style="font-size:11px;color:var(--green);opacity:0;transition:opacity .3s">saved</span>
+      <button class="btn" style="font-size:11px;padding:5px 10px" onclick="exportData()">Export</button>
+      <label class="btn" style="font-size:11px;padding:5px 10px;cursor:pointer">
+        Import<input type="file" accept=".json" style="display:none" onchange="importData(event)">
+      </label>
+    </div>
+  </div>
+
+  <!-- WEATHER BAR -->
+  <div id="weather-bar">
+    <div class="weather-day" style="min-width:120px;text-align:left;background:transparent;border:none">
+      <div class="wd-label">7-day forecast</div>
+      <div style="font-size:10px;color:var(--text3)">Bella Vista, AR</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div id="body">
+    <div id="sidebar">
+      <div id="filter-bar"></div>
+      <div id="plant-list"></div>
+    </div>
+    <div id="detail">
+      <div class="empty-detail">← Select a plant to view details</div>
+    </div>
+  </div>
+
+</div>
+<script src="data/plants.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
