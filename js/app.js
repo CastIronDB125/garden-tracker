@@ -1,7 +1,7 @@
 let plants=[],selectedId=null,currentTab='overview',currentFilter='All',weather=null;
 const TODAY=new Date();TODAY.setHours(0,0,0,0);
 
-function loadPlants(){try{const r=localStorage.getItem('garden-v1');plants=r?JSON.parse(r):JSON.parse(JSON.stringify(PLANTS_INIT));}catch(e){plants=JSON.parse(JSON.stringify(PLANTS_INIT));}}
+function loadPlants(){try{const r=localStorage.getItem('garden-v1');plants=r?JSON.parse(r):JSON.parse(JSON.stringify(PLANT_DATA));}catch(e){plants=JSON.parse(JSON.stringify(PLANT_DATA));}}
 function savePlants(){localStorage.setItem('garden-v1',JSON.stringify(plants));const el=document.getElementById('save-msg');if(!el)return;el.style.opacity='1';clearTimeout(el._t);el._t=setTimeout(()=>el.style.opacity='0',2000);}
 
 async function fetchWeather(){
